@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myNinjaApp"><!-- This is called a directive, anything that has a ng in front, they direct angular -->
+<!-- This is where you put the name of your app -->
+  <head>
+    <title>TheNetNinja Angular Playlist</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+
+    	<!-- Angular -->
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+        <script src="app.js"></script>
+  </head>
+  <body>
+    <header ng-include="'header.html'"></header>
+    <div class="content">
+      <div ng-controller="NinjaController">
+        <button ng-click="order = 'name'">Order by Name</button>
+        <button ng-click="order = 'belt'">Order by Belt</button>
+
+        
+        <input type="text" ng-model="search" placeholder="Search for a ninja"><!-- ng model name is linked to filter -->
+
+        <ul>
+          <li ng-repeat="ninja in ninjas | orderBy: order | filter: search" ng-show="ninja.available">
+
+            <h3>{{ninja.name}} - {{ninja.rate | currency}}</h3>
+            <div class="remove" ng-click="removeNinja(ninja)">x</div><!-- We can pass in Ninja because of the ng-repeat, it's accessing the data" -->
+            <span class="belt" style="background: {{ninja.belt}}">{{ninja.belt}} belt</span> <!-- Currency is a filter -->
+
+          </li>
+        </ul>
+      </div>
+    </div><!-- Don't need to add $scope because it is implied with controller. Only recognizes what's inside the div controller -->
+		
+  </body>
+</html>
+
+
