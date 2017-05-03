@@ -1,0 +1,25 @@
+[{
+	"name": "Yoshi",
+	"belt": "green",
+	"rate": 50,
+	"available": true,
+	"thumb": "img/yoshi.png"
+}, {
+	"name": "Crystal",
+	"belt": "Yellow",
+	"rate": 30,
+	"available": true,
+	"thumb": "img/crystal.png"
+}, {
+	"name": "Ryu",
+	"belt": "orange",
+	"rate": 10,
+	"available": true,
+	"thumb": "img/ryu.png"
+}, {
+	"name": "Shaun",
+	"belt": "black",
+	"rate": 1000,
+	"available": true,
+	"thumb": "img/shaun.png"
+}]

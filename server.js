@@ -7,6 +7,8 @@ var port = 3000;
 
 app.use(express.static(__dirname + "/app"))
 app.use(express.static(__dirname + "/content"))
+app.use(express.static(__dirname + "/views"))
+app.use(express.static(__dirname + "/data"))
 
 app.get("/", function(req, res) {
 
