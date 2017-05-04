@@ -10,10 +10,10 @@ app.use(express.static(__dirname + "/content"))
 app.use(express.static(__dirname + "/views"))
 app.use(express.static(__dirname + "/data"))
 
-app.get("/", function(req, res) {
+app.use(function(req, res) {
+    res.sendfile(__dirname + '/index.html');
+});
 
-	res.sendFile(path.join(__dirname + '/index.html'));
-})
 
 app.listen(port, function() {
 	console.log("Listening on port: " + port);

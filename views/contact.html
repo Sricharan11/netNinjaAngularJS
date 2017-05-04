@@ -1,0 +1,42 @@
+<div class="content">
+
+	<form name="contactForm" ng-submit="sendMessage()" novalidate> <!-- Tells HTML that you want Angular to validate -->
+		<input type="text" placeholder="name" name="name" ng-model="contact.name" ng-required="true" />
+			<div ng-show="contactForm.name.$touched && contactForm.name.$invalid">
+				<small style="color: red; display: block; text-align: center;">Enter a Valid Name</small>
+			</div>
+		<input type="email" placeholder="email" name="email" ng-model="contact.email" ng-required="true" />
+			<div ng-show="contactForm.name.$touched && contactForm.name.$invalid">
+				<small style="color: red; display: block; text-align: center;">Enter a Valid Email</small>
+			</div>
+		<textarea style="width: 100%" name="message" placeholder="Your Message" ng-model="contact.message" ng-required="true"></textarea>
+		<input type="submit" value="Send" ng-disabled="contactForm.$invalid" />
+	</form>
+</div>
+
+<!--
+
+ng-pristine - when form/input not use yet
+ng-dirty - when form/input has been used
+
+ng-untouched - whne input has not been touched
+ng-touched - when input has been touched
+
+ng-valid - when a form field is valid
+ng-invalid - when a form filed is not valid
+
+These are all classes automatically added to form inputs to help evaulate, I believe it starts with the novalidate above. You can inspect elements and it will show you all the classes.
+
+-->
+
+<!--
+
+Form Propertis
+
+Class			Property
+
+ng-pristine		$pristine
+ng-dirty		$dirty
+ng-touched		$touched
+ng-valid		$valid
+ng-invalid		$invalid

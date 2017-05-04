@@ -2,6 +2,8 @@
 <html lang="en" ng-app="myNinjaApp"><!-- This is called a directive, anything that has a ng in front, they direct angular -->
 <!-- This is where you put the name of your app -->
   <head>
+
+    <base href="/indext.html" /> 
     <title>TheNetNinja Angular Playlist</title>
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
 
@@ -9,9 +11,13 @@
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
-        <script src="app.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+
+      <script src="app.js"></script>
+
   </head>
   <body>
+
     <header ng-include="'header.html'"></header>
     <main ng-view></main>
 		

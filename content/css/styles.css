@@ -62,6 +62,7 @@ main{
 
 .content{
   padding: 20px;
+  overflow: hidden; /* This is used to make sure things don't appear outside of content box */
 }
 
 .content button,
@@ -126,4 +127,57 @@ main{
   color: crimson;
   cursor: pointer;
   margin-left: 10px;
+}
+
+/* ANIMATIONS */
+
+/*Enter usually means intorducing animation and leave means animation hidding thing */
+
+/* The starting CSS styles for the enter animation */
+/* First class is what we are animating */
+main.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+main.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+#ninja-list li.ng-enter {
+  transition: 0.2s linear all;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+#ninja-list li.ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+#ninja-list li.ng-leave {
+  transition: 0.2s linear all;
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+#ninja-list li.ng-leave.ng-leave-active {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+/* Leaves in a stagger efffect, not all at once */
+#ninja-list li.ng-leave-stagger {
+  transition-delay: 0.2s;
+  transition-duration: 0;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+
+input[disabled="disabled"] {
+  opacity: 0.4;
+  cursor: not-allowed !important;
 }
